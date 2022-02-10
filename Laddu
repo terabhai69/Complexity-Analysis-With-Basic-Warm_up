@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include<string.h>
+int main(void) {
+	// your code goes here
+	int p,a,i,rank,severity,rnd;
+scanf("%d",&p);
+while(p--)
+{
+    char cha[11];
+    char ind[11];
+    int value=0;
+    scanf("%d",&a);
+    scanf("%s",ind);
+    
+   for(i=0;i<a;i++)
+   {
+           scanf("%s",cha);
+       if(strcmp(cha,"CONTEST_WON")==0)
+       {
+           scanf("%d",&rank);
+           value=value+300;
+           if(rank<20)
+           {
+               value=value+(20-rank);
+           }
+       }
+       else if(strcmp(cha,"TOP_CONTRIBUTOR")==0)
+       {
+           value=value+300;
+       }
+       else if(strcmp(cha,"BUG_FOUND")==0)
+       {
+           scanf("%d",&severity);
+           value=value+severity;
+       }
+       else if(strcmp(cha,"CONTEST_HOSTED")==0)
+       {
+           value=value+50;
+       }
+   }
+   if(strcmp(ind,"INDIAN")==0)
+   {
+       rnd=(value/200);
+       printf("%d\n",rnd);
+   }
+   else if(strcmp(ind,"NON_INDIAN")==0)
+   {
+       rnd=(value/400);
+       printf("%d\n",rnd);
+   }
+}
+	return 0;
+}
