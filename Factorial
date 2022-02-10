@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int T;
+	scanf("%d",&T);
+	while(T--)
+	{
+	    long int n,num,count;
+	    scanf("%ld",&n);
+	    num = 5;
+	    count = 0;
+	    while(n >= num)
+	    {
+	        count =count + (n/num);
+	        num = num * 5;
+	    }
+	    printf("%ld\n", count);
+	}
+	return 0;
+}
